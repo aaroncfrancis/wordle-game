@@ -3,7 +3,7 @@ import string
 
 def generate_word():
     """generates a random 5-letter word"""
-    word = ''.join(random.sample)(string.ascii_lowercase,5)
+    word = ''.join(random.sample(string.ascii_lowercase,5))
     return word
 
 def play_wordle():
@@ -24,6 +24,12 @@ def play_wordle():
         feedback = []
         for i in range(5):
             if guess[i] == target_word[i]:
-                feedback.append(i)
+                feedback.append(str(target_word[i])) #need help here*
             elif guess[i] in target_word:
-                feedback.append()
+                feedback.append('_')
+            else:
+                feedback.append('x')
+
+        print(''.join(str(x) for x in feedback))
+
+play_wordle()
