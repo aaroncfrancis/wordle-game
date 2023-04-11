@@ -24,12 +24,12 @@ def play_wordle():
         feedback = []
         for i in range(5):
             if guess[i] == target_word[i]:
-                feedback.append(str(target_word[i])) #need help here*
+                feedback.append(target_word[i]) #need help here
             elif guess[i] in target_word:
                 feedback.append('_')
             else:
                 feedback.append('x')
 
-        print(''.join(str(x) for x in feedback))
+        print(feedback)
 
 play_wordle()
